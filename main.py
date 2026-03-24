@@ -18,28 +18,31 @@ def main():
         try:
             choice  = int(input("Selecciona una opción: "))
 
-        match choice:
-            case "1": 
-                description = input("Descripción de la tarea: ")
-                task_manager.add_task(description)
-                
-            case "2":
-                task_manager.list_tasks()  
-                
-            case "3":
-                id = int(input("ID de la tarea a completar: ")) 
-                task_manager.complete_task(id)
-                
-            case "4":            
-                id = int(input("ID de la tarea a eliminar: "))
-                task_manager.delete_task(id)
-                
-            case "5":
-                print("Saliendo del gestor de tareas. ¡Hasta luego!")
-                break
-                 
-            case _:
-                print("Opción no válida. Por favor, selecciona una opción del 1 al 5.")
+            match choice:
+                case 1: 
+                    description = input("Descripción de la tarea: ")
+                    task_manager.add_task(description)
+                    
+                case 2:
+                    task_manager.list_tasks()  
+                    
+                case 3:
+                    task_id = int(input("ID de la tarea a completar: ")) 
+                    task_manager.complete_task(task_id)
+                    
+                case 4:            
+                    task_id = int(input("ID de la tarea a eliminar: "))
+                    task_manager.delete_task(task_id)
+                    
+                case 5:
+                    print("Saliendo del gestor de tareas. ¡Hasta luego!")
+                    break
+                    
+                case _:
+                    print("Opción no válida. Por favor, selecciona una opción del 1 al 5.")
+
+        except ValueError:
+            print("Entrada no válida. Por favor, ingresa otra opcion.")
 
 if __name__ == "__main__":
     main()
