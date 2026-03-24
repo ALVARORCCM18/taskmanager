@@ -15,7 +15,8 @@ def main():
     
         print_menu()
 
-        choice  = input("Selecciona una opción: ")
+        try:
+            choice  = int(input("Selecciona una opción: "))
 
         match choice:
             case "1": 

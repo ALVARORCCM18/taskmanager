@@ -1,12 +1,12 @@
 class Task:
-    def __init__(self,id,description,completed=False):
-        self.id = id
+    def __init__(self, task_id, description, completed=False):
+        self.task_id = task_id
         self.description = description
         self.completed = completed
 
     def __str__(self):
         status="✓" if self.completed else " "
-        return f"[{status}] #{self.id}: {self.description}"
+        return f"[{status}] #{self.task_id}: {self.description}"
     
 class TaskManager:
     def __init__(self):
